@@ -1,0 +1,171 @@
+/* === Background blur when modal is active === */
+.blurred {
+  filter: blur(10px);
+  transition: filter 0.5s ease;
+  pointer-events: none;
+}
+
+/* === Modal overlay with glass effect === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* === Modal card === */
+.modal-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  max-width: 640px;
+  width: 90%;
+  padding: 32px;
+  position: relative;
+  text-align: center;
+  animation: popUp 0.4s ease-out;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+/* === Product image with subtle zoom on hover === */
+.modal-content img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.modal-content img:hover {
+  transform: scale(1.025);
+}
+
+/* === Product title === */
+.modal-content h2 {
+  font-size: 28px;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* === Price === */
+.modal-content h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 6px 0 12px;
+}
+
+/* === Delivery info and rating === */
+.modal-content p {
+  font-size: 15px;
+  color: #666;
+  margin: 6px 0;
+}
+
+.modal-content div {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+/* === Action buttons === */
+.modal-content button {
+  margin: 10px 8px 0;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Wishlist Button */
+.modal-content button:first-of-type {
+  background-color: transparent;
+  border: 2px solid #ff8800;
+  color: #ff8800;
+}
+
+.modal-content button:first-of-type:hover {
+  background-color: #ff8800;
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Cart Button */
+.modal-content button:last-of-type {
+  background-color: #111;
+  color: white;
+}
+
+.modal-content button:last-of-type:hover {
+  background-color: #000;
+  transform: scale(1.02);
+}
+
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+  color: #222;
+  transform: rotate(90deg);
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .modal-content h4 {
+    font-size: 18px;
+  }
+
+  .modal-content button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,413 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f7;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-size: 16px;
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.sidebar label {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #444;
+}
+
+.sidebar input[type='radio'] {
+  accent-color: #ff8c00;
+}
+
+.sidebar button {
+  background-color: #ff8c00;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 16px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar button:hover {
+  background-color: #e67e00;
+}
+
+/* Product Grid */
+.products-page {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.products-page .sidebar {
+  flex: 0 0 260px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+  flex: 1;
+}
+
+.cart-product {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cart-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.cart-product img {
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-product img:hover {
+  transform: scale(1.05);
+}
+
+.product-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-content p:first-of-type {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  min-height: 48px;
+}
+
+.product-content h4 {
+  font-size: 20px;
+  color: #000;
+}
+
+.product-content button {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.product-content button:first-of-type {
+  background-color: transparent;
+  border: 2px solid #ff8c00;
+  color: #ff8c00;
+}
+
+.product-content button:first-of-type:hover {
+  background-color: #ff8c00;
+  color: #fff;
+}
+
+.product-content button:last-of-type {
+  background-color: #111;
+  color: #fff;
+}
+
+.product-content button:last-of-type:hover {
+  background-color: #000;
+}
+.add-button{
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  background-color: rgb(3, 194, 3);
+  padding: 10px 20px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .products-page {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .product-content p:first-of-type {
+    font-size: 16px;
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.modal-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-container:hover {
+  transform: translateY(0);
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Modal Input Fields */
+.modal-field {
+  margin-bottom: 20px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-input:focus {
+  border-color: #007aff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 122, 255, 0.5);
+}
+
+/* Image Preview Section */
+.image-preview {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload Button Section */
+.upload-section {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.upload-btn {
+  background: linear-gradient(145deg, #007aff, #0051a1);
+  color: white;
+  padding: 16px 30px;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+}
+
+.upload-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 122, 255, 0.5);
+}
+
+/* Modal Action Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* Primary Action Button */
+.modal-action {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: linear-gradient(145deg, #007aff, #0051a1);
+  color: white;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 48%;
+}
+
+.modal-action:hover {
+  background: linear-gradient(145deg, #0051a1, #007aff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 122, 255, 0.3);
+}
+
+.modal-action:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 122, 255, 0.5);
+}
+
+/* Secondary (Cancel) Button */
+.cancel-btn {
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background: linear-gradient(145deg, #ff3b30, #e10e0b);
+  color: white;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 48%;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(145deg, #e10e0b, #ff3b30);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
+}
+
+.cancel-btn:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 59, 48, 0.5);
+}
+
+/* Close Modal Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Additional Touches */
+.upload-btn, .modal-action, .cancel-btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.modal-container {
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+}
+
+.upload-btn:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 122, 255, 0.5);
+}
+
+/* Modal Background */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Prevent focus on the background when modal is open */
+.modal-container:focus {
+  outline: none;
+}

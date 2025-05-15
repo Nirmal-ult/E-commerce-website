@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0B0C10;
+    padding: 30px 50px;
+    font-family: "Roboto", sans-serif;
+  }
+  .ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 40px;
+  }
+  .link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  .home {
+    display: flex;
+    align-items: center;
+  }
+  .wishlist {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .wishlist p, .home p {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .header a, .wishlist p, .home p {
+    transition: all 0.3s ease;
+  }
+  
+  .header a:hover, .wishlist p:hover, .home p:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+  }
+  
+  .header .home:hover svg, .wishlist .home:hover svg {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .header button {
+    padding: 10px 20px;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(218, 0, 0);
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .header button:hover {
+    background-color: rgb(255, 74, 74);
+    cursor: pointer;
+  }
+  

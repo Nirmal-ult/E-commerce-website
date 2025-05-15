@@ -1,0 +1,92 @@
+{
+  "ProductList": [
+    {
+      "id": "1",
+      "image": "1969.jpeg",
+      "title": "1969 Ford Mustang – Classic V8 Muscle in Midnight Black",
+      "price": 72000,
+      "rating": 4.5,
+      "delivery": {
+        "free": "Sat, 10 May",
+        "fast": "Tomorrow, 8 May"
+      }
+    },
+    {
+      "title": "2012 Lamborghini Gallardo – Italian Precision & Power",
+      "price": 142500,
+      "rating": 4.5,
+      "image": "lambo.jpg",
+      "delivery": {
+        "free": "Wed May 21 2025",
+        "fast": "Tue May 13 2025"
+      },
+      "id": "2"
+    },
+    {
+      "title": "2020 Lamborghini Aventador – V12 Beast, Matte Finish",
+      "price": 393000,
+      "rating": 4.5,
+      "image": "lambo2.jpeg",
+      "delivery": {
+        "free": "Wed May 21 2025",
+        "fast": "Thu May 15 2025"
+      },
+      "id": "3"
+    },
+    {
+      "title": "1967 Shelby GT500 – Legendary Power, Collector's Dream",
+      "price": 158900,
+      "rating": 4.5,
+      "image": "4.jpeg",
+      "delivery": {
+        "free": "Wed May 21 2025",
+        "fast": "Tue May 13 2025"
+      },
+      "id": "4"
+    },
+    {
+      "title": "2021 Lamborghini Huracan EVO – Track-Ready Supercar",
+      "price": 275000,
+      "rating": 4,
+      "image": "5.jpeg",
+      "delivery": {
+        "free": "Mon May 19 2025",
+        "fast": "Wed May 14 2025"
+      },
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "title": "Toyota Camry XSE",
+      "price": 454565,
+      "rating": 4.5,
+      "image": "6.jpeg",
+      "delivery": {
+        "free": "Sun May 18 2025",
+        "fast": "Thu May 15 2025"
+      }
+    },
+    {
+      "title": "gbjkasjdakjsdh",
+      "price": 50000,
+      "rating": 2,
+      "image": "7.jpeg",
+      "delivery": {
+        "free": "Tue May 20 2025",
+        "fast": "Fri May 16 2025"
+      },
+      "id": "7"
+    },
+    {
+      "id": "8",
+      "title": "ashjgdjhsanmknh",
+      "price": 6008,
+      "rating": 3,
+      "image": "8.jpeg",
+      "delivery": {
+        "free": "Wed May 21 2025",
+        "fast": "Fri May 16 2025"
+      }
+    }
+  ]
+}

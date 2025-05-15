@@ -1,0 +1,168 @@
+
+body.signup-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f7971e, #ffd200);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.signup-page {
+    animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+.signup-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 80%;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.signup-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-field {
+    margin-bottom: 1.2rem;
+}
+
+.signup-field label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.signup-field input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.signup-field input:focus {
+    border-color: #f7971e;
+    outline: none;
+}
+
+.signup-password {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.password-toggle:hover {
+    color: #333;
+}
+
+.signup-roles {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.role-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem;
+    border: 2px solid #f7971e;
+    border-radius: 8px;
+    background: transparent;
+    color: #f7971e;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: all 0.3s;
+}
+
+.role-btn:last-child {
+    margin-right: 0;
+}
+
+.role-btn svg {
+    margin-right: 6px;
+}
+
+.role-btn.active {
+    background: #f7971e;
+    color: white;
+}
+
+.signup-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.signup-link {
+    font-size: 0.9rem;
+    color: #f7971e;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-bottom: 15px;
+}
+
+.signup-link span {
+    transition: text-decoration 0.3s;
+}
+
+.signup-link:hover span {
+    text-decoration: underline;
+}
+
+.signup-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #f7971e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* Animations */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
