@@ -1,6 +1,7 @@
-import React from 'react';
+
 import { Link, useNavigate, Outlet } from 'react-router-dom';
-import styles from './Dashboard.module.css';
+import './DashBoard.css'
+
 
 const DashBoard = ({ setCurrentUser }) => {
   const navigate = useNavigate();
